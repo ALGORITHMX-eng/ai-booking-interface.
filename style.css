@@ -125,6 +125,10 @@ body {
   .booking-card { padding: 24px; }
 }
 
+.event-details {
+  /* Prevent description from pushing down calendar on mobile */
+}
+
 .event-title {
   font-size: 1.5rem;
   margin-bottom: 16px;
@@ -163,6 +167,7 @@ body {
   font-family: var(--font-ui);
   font-size: 0.9rem;
   text-transform: uppercase;
+  color: var(--text-primary);
 }
 
 .nav-btn {
@@ -172,6 +177,12 @@ body {
   padding: 4px 12px;
   border-radius: var(--radius-sm);
   cursor: pointer;
+  transition: var(--transition);
+}
+
+.nav-btn:hover {
+    background: var(--neon-dim);
+    border-color: var(--neon);
 }
 
 .calendar-grid-header {
@@ -219,6 +230,10 @@ body {
 
 .day-cell.today {
   border: 1px solid var(--neon);
+}
+
+.day-cell.empty {
+    cursor: default;
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -284,3 +299,8 @@ body {
 }
 
 .btn-primary:hover { transform: scale(1.02); }
+
+.btn-primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
